@@ -1,6 +1,7 @@
 import cv2
 import sys
 from algorithm import VectorPredictor
+
 # Get user supplied values
 cascPath = "data/haarcascade_frontalface_default.xml"
 # Create the haar cascade
@@ -35,7 +36,7 @@ while (cap.isOpened()):
             cv2.rectangle(frame, (x, y), (x2, y2), (0, 255, 0), 2)
             newbb.append(((x,y),(x2,y2)))
 
-        newvecs = vecP.add_frame(newBB)
+        newvecs = vecP.add_frame(newbb)
         for name,a,b in newvecs:
             cv2.rectangle(frame, a, b, (0, 255, 0), 2)
 

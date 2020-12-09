@@ -116,7 +116,7 @@ class Vector:
         #plotting values
         self.yintercept= yinter
         self.gradient = gradient
-        self.bboxs = [*bboxs]
+        self.bboxs = [bboxs]
 
     def rebuild_from_bbox(self):
         xlist = [x[0] for x, y in self.bboxs]

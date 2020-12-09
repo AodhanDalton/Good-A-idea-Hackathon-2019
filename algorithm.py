@@ -59,7 +59,7 @@ class VectorPredictor:
     def update_vectors(self):
         '''Updates the vectors with the new bounding box and kills dead vectors'''
         #TODO could we get the lines here and add on the new chains???
-        for v in vectors:
+        for v in self.VECTORS:
             #Check the newest set of frames
             for bbox in frames[0]:
                 #TODO DECIDE BETWEEN LINE OR BOX OVERLAP
@@ -78,7 +78,7 @@ class VectorPredictor:
 
 
     def build_vector_lines(self):
-        return [v.get_line() for v in vectors]
+        return [v.get_line() for v in self.VECTORS]
         
     def box_overlap(self, a, b):
         #a's
